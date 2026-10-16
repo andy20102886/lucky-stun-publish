@@ -1,0 +1,35 @@
+{
+  "_说明": "复制本文件为 ~/.workbuddy/stun-publish.json（或用环境变量 STUN_PUBLISH_CONF 指定路径），把 <> 占位符换成你自己的值。⚠️ 这个真实配置文件永远不要提交进仓库。",
+  "_注释": {
+    "lucky.base": "穿透软件后台地址。若发布脚本不在内网（例如办公机），改成经隧道可达的地址即可——脚本只认这一个入口。",
+    "platform.base": "固定入口那层（你自己部署的 Cloudflare Worker）的域名。",
+    "platform.webhook_key": "Worker 写入/查询用的钥匙，对应 Worker 里的 WEBHOOK_KEY 绑定。",
+    "platform.panel_pass": "Worker 状态页的登录口令。",
+    "platform.panel_token": "Worker 登录成功后下发的 cookie 值，脚本调接口时复用。",
+    "platform.ddns_host": "自动跟随公网 IP 的那个域名（DDNS），对应 Worker 里的 DDNS_HOST 绑定。",
+    "uptimerobot.key": "UptimeRobot 的 API Key（主 Key，读写监控用）。",
+    "cloudflare.api_token": "Cloudflare Token，需要 Workers + KV 读写权限（清理平台记录时用）。",
+    "cloudflare.account": "Cloudflare Account ID。",
+    "cloudflare.kv_namespace": "Worker 用的 KV 命名空间 ID。"
+  },
+  "lucky": {
+    "base": "http://192.168.1.10:16601",
+    "user": "<穿透软件账号>",
+    "pass": "<穿透软件口令>"
+  },
+  "platform": {
+    "base": "https://stun.example.com",
+    "webhook_key": "<WEBHOOK_KEY>",
+    "panel_pass": "<面板口令>",
+    "panel_token": "<面板 cookie 值>",
+    "ddns_host": "stun-ip.example.com"
+  },
+  "uptimerobot": {
+    "key": "<UptimeRobot API Key>"
+  },
+  "cloudflare": {
+    "account": "<CF Account ID>",
+    "kv_namespace": "<KV Namespace ID>",
+    "api_token": "<CF API Token>"
+  }
+}
